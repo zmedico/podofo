@@ -875,7 +875,7 @@ int main( int argc, char* argv[] )
         outputfile = NULL;
     }
 
-#ifdef PODOFO_HAVE_OPENSSL_1_1
+#if defined (PODOFO_HAVE_OPENSSL_1_1) && !defined (LIBRESSL_VERSION_NUMBER)
     OPENSSL_init_ssl(0, NULL);
 #else
     OpenSSL_add_all_algorithms();
